@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Browsing App</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Use Google Sans (or fallback) for consistency -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header class="header">
+      <a href="../../index.html">
+        <img id="logo-header" src="../img/logo.png" alt="Company Logo">
+      </a>
+      <nav class="nav-tabs">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+   </header>
+   
+   <!--- main content section -->
+  <div class="service-tiles">
+    <div class="service-tile">
+      <img src="../img/service1.png" alt="Service 1" class="service-img">
+      <h3>Service Name 1</h3>
+      <p>Short description of service 1 goes here.</p>
+    </div>
+    <div class="service-tile">
+      <img src="../img/service2.png" alt="Service 2" class="service-img">
+      <h3>Service Name 2</h3>
+      <p>Short description of service 2 goes here.</p>
+    </div>
+    <div class="service-tile">
+      <img src="../img/service3.png" alt="Service 3" class="service-img">
+      <h3>Service Name 3</h3>
+      <p>Short description of service 3 goes here.</p>
+    </div>
+    <!-- Add more tiles as needed -->
+  </div>
+
+     
+   <script>
+  // Apply dark mode on page load if previously set
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+  }
+
+  const toggle = document.getElementById('dark-mode-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        localStorage.removeItem('darkMode');
+      }
+    });
+  }
+</script>
+</body>
+</html>
